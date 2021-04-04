@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:sample_compagno/global_widgets/custom_textfield.dart';
 import 'package:sample_compagno/global_widgets/rounded_button.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:sample_compagno/global_widgets/top_gradient.dart';
 import 'package:sample_compagno/modules/sign_up/signup_controller.dart';
 import 'package:sample_compagno/utils/constants.dart';
 
@@ -21,23 +22,7 @@ class SignUpPage extends StatelessWidget {
             height: 168.h,
             child: Stack(
               children: [
-                Positioned(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment(0.128, 0.77),
-                          end: Alignment(0.31, -1.3),
-                          colors: [
-                            Colors.white.withOpacity(0),
-                            Color(0xff659CB5).withOpacity(0.6),
-                            Color(0xff5994AF).withOpacity(0.8),
-                            Color(0xff076188).withOpacity(0.8),
-                          ],
-                          stops: [0, 0.45, 0.6, 1],
-                          tileMode: TileMode.clamp),
-                    ),
-                  ),
-                ),
+                TopGradient(),
                 Positioned(
                   child: Image.asset("assets/images/logo.png",
                       width: 173.w, height: 33.h),
@@ -71,8 +56,10 @@ class SignUpPage extends StatelessWidget {
                 CustomTextField(
                   keyboardType: TextInputType.text,
                   validator: (value) {
-                    //TODO name has to be first name and last name
-                    if(!value.toString().isAlphabetOnly)
+                    if (value.toString().split(" ").length != 2)
+                      return 'Please enter a separate first name and last name';
+                    if (!value.toString().split(" ")[0].isAlphabetOnly ||
+                        !value.toString().split(" ")[1].isAlphabetOnly)
                       return 'Name has to contain only alphabetic characters';
                     if (value.length > 20)
                       return 'Name cannot be more than 20 characters long';
@@ -97,7 +84,8 @@ class SignUpPage extends StatelessWidget {
                 CustomTextField(
                   keyboardType: TextInputType.number,
                   validator: (value) {
-                    if(!value.toString().isPhoneNumber)
+                    if (value.toString().isEmpty) return null;
+                    if (!value.toString().isPhoneNumber)
                       return 'Please enter a valid phone number';
                     return null;
                   },
@@ -174,7 +162,7 @@ class SignUpPage extends StatelessWidget {
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
-                    GestureDetector(
+                    InkWell(
                       onTap: controller.toLoginPage,
                       child: Text(
                         " Login",

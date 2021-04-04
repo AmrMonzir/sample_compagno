@@ -9,8 +9,9 @@ part './routes.dart';
 class AppPages {
   static final pages = [
     GetPage(name: Routes.LOGIN, page: () => LoginPage(), binding: AppBinding()),
-    GetPage(name: Routes.SIGNUP, page: () => SignUpPage()),
+    GetPage(
+        name: Routes.SIGNUP, page: () => SignUpPage(), binding: AppBinding()),
     GetPage(name: Routes.HOME, page: () => HomePage()),
-    GetPage(name: Routes.DEMO, page: () => DemoPage()),
+    GetPage(name: Routes.DEMO, page: () => DemoPage(), binding: AppBinding()),
   ];
 }

@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:sample_compagno/global_widgets/custom_textfield.dart';
 import 'package:sample_compagno/global_widgets/rounded_button.dart';
+import 'package:sample_compagno/global_widgets/top_gradient.dart';
 import 'package:sample_compagno/utils/constants.dart';
 import 'login_controller.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,23 +22,7 @@ class LoginPage extends GetView<LoginController> {
             height: 168.h,
             child: Stack(
               children: [
-                Positioned(
-                  child: Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment(0.128, 0.77),
-                          end: Alignment(0.31, -1.3),
-                          colors: [
-                            Colors.white.withOpacity(0),
-                            Color(0xff659CB5).withOpacity(0.6),
-                            Color(0xff5994AF).withOpacity(0.8),
-                            Color(0xff076188).withOpacity(0.8),
-                          ],
-                          stops: [0, 0.45, 0.6, 1],
-                          tileMode: TileMode.clamp),
-                    ),
-                  ),
-                ),
+                TopGradient(),
                 Positioned(
                   child: Image.asset("assets/images/logo.png",
                       width: 173.w, height: 33.h),
@@ -112,7 +97,7 @@ class LoginPage extends GetView<LoginController> {
                 ),
                 SizedBox(height: 28.h),
                 Center(
-                  child: GestureDetector(
+                  child: InkWell(
                     onTap: controller.forgotPassword,
                     child: Text("Forgot your password?",
                         style: TextStyle(
@@ -181,7 +166,7 @@ class LoginPage extends GetView<LoginController> {
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
-                    GestureDetector(
+                    InkWell(
                       onTap: controller.toSignUpPage,
                       child: Text(
                         " Sign up",

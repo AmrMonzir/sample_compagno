@@ -22,6 +22,7 @@ dependencies:
   flutter_screenutil: 5.0.0-nullsafety.11
   flutter_svg: 0.21.0-nullsafety.0
   font_awesome_flutter: ^9.0.0
+  carousel_slider: 4.0.0-nullsafety.0
 
 dev_dependencies:
   flutter_test:

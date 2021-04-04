@@ -22,8 +22,7 @@ class RoundedButton extends StatelessWidget {
       color: color,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(28),
-        side: BorderSide(
-            color: borderColor == null ? Colors.transparent : borderColor!),
+        side: BorderSide(color: borderColor ?? Colors.transparent),
       ),
       child: MaterialButton(
         onPressed: onPress,
@@ -32,7 +31,7 @@ class RoundedButton extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            leading == null ? Container() : leading!,
+            leading ?? Container(),
             Text(
               text,
               style: textStyle,

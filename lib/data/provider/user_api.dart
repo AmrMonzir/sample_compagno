@@ -4,6 +4,7 @@ import 'package:get/get_connect/connect.dart';
 import 'package:http/http.dart' as http;
 import 'package:sample_compagno/data/model/user.dart';
 import 'package:sample_compagno/data/services/secure_storage.dart';
+import 'package:sample_compagno/utils/constants.dart';
 
 const baseUrl = 'http://3.137.152.52/bagisto/public/api/customer/';
 
@@ -44,9 +45,15 @@ class UserApi extends GetConnect {
       required String lastName,
       String? mobileNumber,
       String? address}) async {
+    print(email);
+    print(password);
+    print(passwordConfirmation);
+    print(firstName);
+    print(lastName);
     var response;
     try {
       var uri = Uri.parse(baseUrl + "register");
+      print(uri.toString());
       response = await client.post(uri,
           headers: {"Content-Type": "application/json"},
           body: jsonEncode({
@@ -59,10 +66,9 @@ class UserApi extends GetConnect {
     } on Exception catch (e) {
       print(e);
     }
-    if (response.statusCode == 200) {
+    if (response.statusCode == 200)
       return true;
-    } else {
-      throw jsonDecode(response.body)["message"];
-    }
+    else
+      throw "This email has already been taken";
   }
 }
