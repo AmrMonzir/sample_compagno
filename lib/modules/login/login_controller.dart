@@ -35,7 +35,7 @@ class LoginController extends GetxController {
   }
 
   toSignUpPage() {
-    Get.offAndToNamed(Routes.SIGNUP);
+    Get.offNamed(Routes.SIGNUP);
   }
 
   Future<void> forgotPassword() async {

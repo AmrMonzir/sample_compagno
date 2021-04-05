@@ -28,16 +28,18 @@ class LoginPage extends GetView<LoginController> {
                       width: 173.w, height: 33.h),
                   top: 49.h,
                 ),
-                Positioned(
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                        fontWeight: FontWeight.w800,
-                        fontSize: 30,
-                        color: Color(0xff4A4B4D)),
+                Positioned.fill(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w800,
+                          fontSize: 30,
+                          color: Color(0xff4A4B4D)),
+                    ),
                   ),
                   bottom: 16.h,
-                  left: 147.w,
                 ),
               ],
             ),

@@ -4,7 +4,6 @@ import 'package:get/get_connect/connect.dart';
 import 'package:http/http.dart' as http;
 import 'package:sample_compagno/data/model/user.dart';
 import 'package:sample_compagno/data/services/secure_storage.dart';
-import 'package:sample_compagno/utils/constants.dart';
 
 const baseUrl = 'http://3.137.152.52/bagisto/public/api/customer/';
 

@@ -26,13 +26,13 @@ class DemoPage extends StatelessWidget {
                 child: ListView(
                   children: [
                     Image.asset("assets/images/demo.png",
-                        height: 320.w, width: 320.w),
+                        height: 320.h, width: 320.w),
                     SizedBox(height: 16.h),
                     Image.asset(
                       "assets/images/logo.png",
-                      height: 60.h,
+                      height: 49.h,
                     ),
-                    SizedBox(height: 55.h),
+                    SizedBox(height: 88.h),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 52),
                       child: Text(

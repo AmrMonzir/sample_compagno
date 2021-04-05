@@ -18,9 +18,12 @@ class CategoriesPlaceholder extends StatelessWidget {
             Row(
               children: [
                 SizedBox(width: 10.w),
-                ShimmerContainer(width: 107.w, height: 130.h, borderRadius: 10),
-                ShimmerContainer(width: 107.w, height: 130.h, borderRadius: 10),
-                ShimmerContainer(width: 107.w, height: 130.h, borderRadius: 10),
+                ShimmerContainer(
+                    width: 107.w, height: 130.h, borderRadius: 10, margin: 10),
+                ShimmerContainer(
+                    width: 107.w, height: 130.h, borderRadius: 10, margin: 10),
+                ShimmerContainer(
+                    width: 107.w, height: 130.h, borderRadius: 10, margin: 10),
               ],
             ),
           ],

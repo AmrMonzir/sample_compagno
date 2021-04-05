@@ -16,7 +16,7 @@ class SignUpController extends GetxController {
   var confirmedPassword = "".obs;
 
   toLoginPage() {
-    Get.offAndToNamed(Routes.LOGIN);
+    Get.offNamed(Routes.LOGIN);
   }
 
   Future<void> signUp() async {

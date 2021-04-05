@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:sample_compagno/modules/app_binding.dart';
-import 'package:sample_compagno/modules/demo/demo.dart';
+import 'package:sample_compagno/modules/home/home.dart';
 import 'package:sample_compagno/routes/pages.dart';
 import 'package:sample_compagno/utils/constants.dart';
 
@@ -19,7 +19,9 @@ class MyApp extends StatelessWidget {
       builder: () => GetMaterialApp(
         debugShowCheckedModeBanner: false,
         initialBinding: AppBinding(),
-        initialRoute: Routes.DEMO,
+        initialRoute: Routes.HOME,
+        // locale: DevicePreview.locale(context),
+        // builder: DevicePreview.appBuilder,
         theme: ThemeData(
           primaryColor: kPrimaryColor,
           accentColor: kPrimaryColor,
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
         defaultTransition: Transition.fade,
         getPages: AppPages.pages,
-        home: DemoPage(),
+        home: HomePage(),
       ),
     );
   }
