@@ -1,8 +1,24 @@
-# sample_compagno
+# Compagnio Sample App
 
-A Sample Flutter project requested as an assignment for Compagno Worldwide company.
+###     Screenshots
 
-Here is a video of how it works:
-https://drive.google.com/file/d/11AZNY0dfysfGuCcQnfpMrKuXHcLFSDUD/view?usp=sharing
+#### Start Page
+![](https://i.imgur.com/gNSC7L1.jpg)
 
-It is created using GetX package with the MVP architectural pattern employed with the help of GetX from https://github.com/kauemurakami/getx_pattern/.
+#### Login
+![](https://i.imgur.com/c8ZfnnX.jpg)
+
+#### Signup
+![](https://i.imgur.com/Mczuwb0.jpg)
+
+#### Home
+![](https://i.imgur.com/yYx4mbv.jpg) ![](https://i.imgur.com/PmLCnVG.jpg)
+
+
+## [Here's a video of it working](https://drive.google.com/file/d/11AZNY0dfysfGuCcQnfpMrKuXHcLFSDUD/view?usp=sharing)
+
+
+## Tools learned:
+
+* GetX Architectural Pattern by https://github.com/kauemurakami/getx_pattern/.
+* Token-based communication with REST API 
